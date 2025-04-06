@@ -29,7 +29,7 @@
 ## Contributors
 
 - chhavisharma0902
-- TalentBhaiarm
+- TalentBhairam
 - hemakshiyeole01
 - SarthakRathi04
 
