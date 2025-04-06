@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #9dc7f2 ;
+    color: #2E3A59 ;
+    line-height: 1.6;
+}
+
+header {
+    position: relative;
+    background: #9dc7f2 ;
+    color: #2E3A59 ;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #2E3A59 ;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #3f4245;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#side-nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background: #3f4245;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    transition: left 0.3s ease;
+    font-size: 1.5 rem;
+}
+
+#side-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+#side-nav a:hover {
+    text-decoration: underline;
+}
+
+#side-nav.open {
+    left: 0; /* Slide in */
+}
+
+#close-nav {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+#close-nav:hover {
+    color: #ff6b6b;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.shutterstock.com/image-illustration/happy-group-kids-girls-wheelchair-600nw-1176723229.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e55a5a;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

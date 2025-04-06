@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #9dc7f2;
+            color: black;
+            padding: 1rem;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .section {
+            margin: 15px;
+        }
+        .section h2 {
+            background-color: white;
+            color: black;
+            padding: 7px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .section h2:hover {
+            background-color: #f0f0f0;
+        }
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 20px;
+        }
+        .popup h2 {
+            margin-top: 0;
+        }
+        .popup p {
+            margin: 1rem 0;
+        }
+        .popup a {
+            display: block;
+            margin: 10px 0;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .popup a:hover {
+            text-decoration: underline;
+        }
+        .popup .close-btn {
+            background-color: rgb(255, 219, 88);
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .popup .close-btn:hover {
+            background-color: #e6b800;
+        }
+        /* Overlay styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        footer {
+            text-align: center;
+            padding: 0.2rem;
+            background-color: #9dc7f2;
+            color: black;
+            font-size: 0.8rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Modal for enlarged images */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .image-modal img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+        .image-modal .close-btn {
+            display: block;
+            margin: 1rem auto 0;
+            background-color: rgb(255, 219, 88);
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .image-modal .close-btn:hover {
+            background-color: #e6b800;
+        }
+    </style>
+    <script>
+        function openPopup(sectionId, title, content) {
+            const popup = document.querySelector('.popup');
+            const overlay = document.querySelector('.overlay');
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-content').innerHTML = content;
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        function closePopup() {
+            const popup = document.querySelector('.popup');
+            const overlay = document.querySelector('.overlay');
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        function enlargeImage(src) {
+            const modal = document.querySelector('.image-modal');
+            const modalImage = modal.querySelector('img');
+            modalImage.src = src;
+            modal.style.display = 'block';
+        }
+
+        function closeImageModal() {
+            const modal = document.querySelector('.image-modal');
+            modal.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Your Toolkit for Inclusive Teaching</h1>
+    </header>
+
+    <div class="section">
+        <h2 onclick="openPopup(
+            'educational-tools', 
+            'Educational Tools & Materials', 
+            `
+            <p>Explore tools like flashcards, manipulatives, and digital apps to enhance learning.</p>
+            <div style='display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;'>
+                <img src='https://m.media-amazon.com/images/I/91emP+gqy+L.jpg' alt='Flashcards' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+                <img src='https://m.media-amazon.com/images/I/71DI5TbjHqL.jpg' alt='Learning Tools' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+                <img src='https://study.com/cimages/multimages/16/dailyschedules.png' alt='Daily Schedules' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+                <img src='https://study.com/cimages/multimages/16/singleactivityschedule.png' alt='Daily Schedules 2' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+            </div>
+            `
+        )">1. Educational Tools & Materials</h2>
+    </div>
+
+    <div class="section">
+        <h2 onclick="openPopup(
+            'guides-best-practices', 
+            'Guides & Best Practices', 
+            `
+            <p>Access step-by-step guides and proven strategies for inclusive teaching:</p>
+            <a href='https://1drv.ms/b/c/3227ebca7be93cba/EVcJZgg98ttMlzUJIk4mVYwBUE2ZUJJY7lEANGL18OmBFw?e=FdU8jv' target='_blank'>Guide 1: Educational Resources for Students with Autism Spectrum Disorders</a>
+            <a href='https://1drv.ms/b/c/3227ebca7be93cba/EfB9XZugEqtFh3xvXBdzAsEBiKIPw5Cgqd8pE2tslYz-9g?e=xXApZS' target='_blank'>Guide 2: Understanding and Identifying Specific Learning Difficulties:Dyslexia, Autism Spectrum, and Attention Deficit/Hyperactivity in the Adult ESL/EFL Classroom</a>
+            <a href='https://1drv.ms/b/c/3227ebca7be93cba/EReXTH0_Ov9CrWvmV2jSP5ABJdPtfNIhjWcagNT9Q3cCew?e=tiDwxJ' target='_blank'>Guide 3: Teaching for Neurodiversity :A Guide to Specific Learning Difficulties</a>
+            `
+        )">2. Guides & Best Practices</h2>
+    </div>
+
+    <div class="section">
+        <h2 onclick="openPopup(
+            'external-links', 
+            'External Links to Trusted Organizations', 
+            `
+            <p>Find links to trusted organizations offering resources for special education:</p>
+            <a href='https://exceptionalchildren.org' target='_blank'>1. The Council for Exceptional Children (CEC)</a>
+            <p>Focus: Advocacy, training, and resources for special education professionals.</p>
+            <a href='https://www.understood.org/' target='_blank'>2. Understood</a>
+            <p>Focus: Supporting parents and educators of children with learning and thinking differences like ADHD and dyslexia.</p>
+            <a href='https://www.specialolympics.org/' target='_blank'>3. Special Olympics Resources</a>
+            <p>Focus: To provide inclusive sports, health, and educational support for individuals with intellectual disabilities.</p>
+            <a href='https://www.autismspeaks.org' target='_blank'>4. Autism Speaks</a>
+            <p>Focus: Autism awareness, toolkits, and support.</p>
+            <a href='https://thearc.org' target='_blank'>5. The Arc</a>
+            <p>Focus: Advocacy and support for people with intellectual and developmental disabilities.</p>
+            `
+        )">3. External Links to Trusted Organizations</h2>
+    </div>
+
+    <div class="section">
+        <h2 onclick="openPopup('multimedia-resources', 'Multimedia Learning Resources', 'Discover videos, podcasts, and interactive tools for engaging learning.')">4. Multimedia Learning Resources</h2>
+    </div>
+
+    <div class="section">
+        <h2 onclick="openPopup('community-support', 'Community Support & Forums', 'Join forums and communities to connect with other educators and parents.')">5. Community Support & Forums</h2>
+    </div>
+
+    <div class="section">
+        <h2 onclick="openPopup('legal-rights', 'Legal Rights & Policies', 'Learn about the legal rights and policies that protect students with disabilities.')">6. Legal Rights & Policies</h2>
+    </div>
+
+    <!-- Popup and Overlay -->
+    <div class="overlay" onclick="closePopup()"></div>
+    <div class="popup">
+        <h2 id="popup-title"></h2>
+        <p id="popup-content"></p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="image-modal">
+        <img src="" alt="Enlarged Image">
+        <button class="close-btn" onclick="closeImageModal()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Community Engagement Project</p>
+    </footer>
+</body>
+</html>

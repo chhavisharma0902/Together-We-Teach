@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teaching Strategies for Mentally Disabled Students">
+    <title>Teaching Strategies for Mentally Disabled Students</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #9dc7f2 ;
+            color: black;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        .slot {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .slot:hover {
+            transform: scale(1.02);
+        }
+        .slot h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .slot p {
+            margin: 0.5rem 0 0;
+        }
+        footer {
+            text-align: center;
+            padding: 0.5 rem;
+            background-color: #9dc7f2 ;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 1.5rem;
+        }
+        .popup h2 {
+            margin-top: 0;
+        }
+        .popup p {
+            margin: 1rem 0;
+        }
+        .popup .close-btn {
+            background-color: rgb(255, 219, 88);
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .popup .close-btn:hover {
+            background-color: #e6b800;
+        }
+        /* Overlay styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Teaching Strategies for Mentally Disabled Students</h1>
+    </header>
+    <main>
+        <div class="slot" data-strategy="1">
+            <h2>1. Individualized Instruction</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="2">
+            <h2>2. Visual Aids and Hands-On Learning</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="3">
+            <h2>3. Repetition and Practice</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="4">
+            <h2>4. Simple Language and Clear Instructions</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="5">
+            <h2>5. Positive Reinforcement</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="6">
+            <h2>6. Peer Support and Social Skills Training</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="7">
+            <h2>7. Modify Materials and Assessment</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="8">
+            <h2>8. Use of Technology</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="9">
+            <h2>9. Patience and Emotional Support</h2>
+            <p>Click to learn more...</p>
+        </div>
+        <div class="slot" data-strategy="10">
+            <h2>10. Family Involvement</h2>
+            <p>Click to learn more...</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Community Engagement Project</p>
+    </footer>
+
+    <!-- Popup and Overlay -->
+    <div class="overlay"></div>
+    <div class="popup">
+        <h2 id="popup-title"></h2>
+        <p id="popup-content"></p>
+        <button class="close-btn">Close</button>
+    </div>
+
+    <script>
+        const strategies = {
+            1: {
+                title: "Individualized Instruction",
+                content: `
+                    <strong>What It Means:</strong> Tailoring teaching methods, materials, and pace to each student’s learning level and needs.<br><br>
+                    <strong>Why It Works:</strong> Mentally disabled students often have unique learning profiles. Individualized instruction ensures that lessons match their abilities.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Use IEPs (Individualized Education Programs) as a roadmap.</li>
+                        <li>Set realistic and personalized goals.</li>
+                        <li>Work in one-on-one or small group settings.</li>
+                        <li>Allow extra time and flexibility for tasks.</li>
+                    </ul>
+                `
+            },
+            2: {
+                title: "Visual Aids and Hands-On Learning",
+                content: `
+                    <strong>What It Means:</strong> Using pictures, physical activities, and objects to make abstract concepts more concrete.<br><br>
+                    <strong>Why It Works:</strong> Visuals and tactile activities enhance understanding, especially for students who struggle with verbal instruction.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Use charts, flashcards, picture schedules, and videos.</li>
+                        <li>Incorporate real-life objects in lessons (e.g., teaching money with real coins).</li>
+                        <li>Allow students to touch, build, and move as part of learning.</li>
+                    </ul>
+                `
+            },
+            3: {
+                title: "Repetition and Practice",
+                content: `
+                    <strong>What It Means:</strong> Reviewing skills and concepts regularly to reinforce memory and understanding.<br><br>
+                    <strong>Why It Works:</strong> Many students with intellectual disabilities need multiple exposures to retain information.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Practice through games, drills, and routine activities.</li>
+                        <li>Use daily reviews and repeated modeling of skills.</li>
+                        <li>Don’t rush—mastery over speed.</li>
+                    </ul>
+                `
+            },
+            4: {
+                title: "Simple Language and Clear Instructions",
+                content: `
+                    <strong>What It Means:</strong> Breaking down directions into easy-to-understand, step-by-step formats.<br><br>
+                    <strong>Why It Works:</strong> Complex language can be confusing. Clear, simple instructions reduce frustration and boost comprehension.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Use short sentences, familiar words, and visual cues.</li>
+                        <li>Provide instructions one at a time.</li>
+                        <li>Check for understanding by asking the student to repeat the instruction.</li>
+                    </ul>
+                `
+            },
+            5: {
+                title: "Positive Reinforcement",
+                content: `
+                    <strong>What It Means:</strong> Encouraging desired behaviors and learning through rewards and praise.<br><br>
+                    <strong>Why It Works:</strong> Motivation and confidence can grow when efforts are acknowledged.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Offer verbal praise, stickers, or token rewards.</li>
+                        <li>Create behavior charts or point systems.</li>
+                        <li>Reinforce even small achievements to build a sense of progress.</li>
+                    </ul>
+                `
+            },
+            6: {
+                title: "Peer Support and Social Skills Training",
+                content: `
+                    <strong>What It Means:</strong> Teaching social interaction skills and using peers to model or assist learning.<br><br>
+                    <strong>Why It Works:</strong> Students often learn from peers more naturally and gain confidence socially.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Use peer buddies or cooperative group work.</li>
+                        <li>Teach social behaviors like greeting, turn-taking, and sharing through role-play.</li>
+                        <li>Use visual social stories to explain real-world social situations.</li>
+                    </ul>
+                `
+            },
+            7: {
+                title: "Modify Materials and Assessment",
+                content: `
+                    <strong>What It Means:</strong> Adjusting the difficulty level of tasks and how student progress is measured.<br><br>
+                    <strong>Why It Works:</strong> Standard materials may be too advanced or irrelevant; customization ensures accessibility.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Use simplified worksheets, large fonts, or picture-supported text.</li>
+                        <li>Offer multiple formats of response: verbal, pointing, drawing, or digital.</li>
+                        <li>Focus on practical life skills in assessments when possible.</li>
+                    </ul>
+                `
+            },
+            8: {
+                title: "Use of Technology",
+                content: `
+                    <strong>What It Means:</strong> Incorporating digital tools and assistive devices into the learning process.<br><br>
+                    <strong>Why It Works:</strong> Technology can increase independence, provide multisensory input, and make learning fun.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Use apps for communication, reading, or math practice.</li>
+                        <li>Try text-to-speech, visual timers, or interactive whiteboards.</li>
+                        <li>Customize devices to fit student needs (e.g., AAC devices for nonverbal students).</li>
+                    </ul>
+                `
+            },
+            9: {
+                title: "Patience and Emotional Support",
+                content: `
+                    <strong>What It Means:</strong> Being calm, encouraging, and emotionally available to help students feel secure and motivated.<br><br>
+                    <strong>Why It Works:</strong> Learning can be stressful for disabled students—emotional support builds trust and persistence.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Provide praise and reassurance frequently.</li>
+                        <li>Create a structured, predictable classroom.</li>
+                        <li>Offer calming spaces or sensory breaks when needed.</li>
+                    </ul>
+                `
+            },
+            10: {
+                title: "Family Involvement",
+                content: `
+                    <strong>What It Means:</strong> Engaging parents and caregivers in the educational process.<br><br>
+                    <strong>Why It Works:</strong> Consistency between school and home accelerates learning and behavior development.<br><br>
+                    <strong>How To Apply:</strong>
+                    <ul>
+                        <li>Share daily or weekly updates with families.</li>
+                        <li>Involve them in goal-setting and support plans.</li>
+                        <li>Provide home activities that reinforce classroom learning.</li>
+                    </ul>
+                `
+            }
+        };
+
+        const slots = document.querySelectorAll('.slot');
+        const popup = document.querySelector('.popup');
+        const overlay = document.querySelector('.overlay');
+        const popupTitle = document.getElementById('popup-title');
+        const popupContent = document.getElementById('popup-content');
+        const closeBtn = document.querySelector('.close-btn');
+
+        slots.forEach(slot => {
+            slot.addEventListener('click', () => {
+                const strategyId = slot.getAttribute('data-strategy');
+                popupTitle.textContent = strategies[strategyId].title;
+                popupContent.innerHTML = strategies[strategyId].content;
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
