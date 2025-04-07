@@ -19,44 +19,58 @@
             text-align: center;
             position: relative;
         }
-        #menu-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: white;
-        }
         #side-nav {
             position: fixed;
             top: 0;
-            left: -250px;
+            left: -250px; /* Start hidden */
             width: 250px;
             height: 100%;
-            background-color: #363635;
+            background: #3f4245;
             color: white;
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
+            overflow-y: auto;
             transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 1rem;
         }
         #side-nav a {
+            display: block;
             color: white;
             text-decoration: none;
-            margin: 0.5rem 0;
+            padding: 1rem;
+            border-bottom: 1px solid #444;
         }
         #side-nav a:hover {
-            text-decoration: underline;
+            background-color: #575757;
         }
-        #close-nav {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+
+        #side-nav.open {
+            left: 0; /* Slide in */
+        }
+
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #3f4245;
             color: white;
-            align-self: flex-end;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        #close-nav {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        #close-nav:hover {
+            color: #ff6b6b;
         }
         .container {
             max-width: 800px;
@@ -93,7 +107,7 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: #363635;
+            background-color: #555;
         }
         footer {
             text-align: center;
@@ -118,15 +132,70 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Connect with Us</h2>
+    <main style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; padding: 2rem;">
+        <!-- Form Container -->
+        <div class="form-container" style="flex: 1; min-width: 300px; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h2>Connect With Us</h2>
             <p>Join our forums and social media groups to share ideas and resources with other educators and parents.</p>
-        </section>
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                
+                <button type="submit">Join Now</button>
+            </form>
+        </div>
+
+        <!-- Buttons Container -->
+        <div class="buttons-container" style="flex: 1; min-width: 300px; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+            <h2>Support Our Community</h2>
+            <p>Your contributions help us grow and provide better resources for everyone.</p>
+            <!-- Donation Button -->
+            <button onclick="window.location.href='https://www.paypal.com/donate'" style="background-color: #0070ba; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;">
+                Donate Now
+            </button>
+
+            <h2 style="margin-top: 2rem;">Shop Our Resources</h2>
+            <p>Explore our e-commerce store for educational tools and materials.</p>
+            <!-- E-Commerce Button -->
+            <button onclick="window.location.href='https://www.example.com/shop'" style="background-color: #28a745; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;">
+                Visit Our Store
+            </button>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Community Engagement Project</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideNav = document.getElementById('side-nav');
+            const closeNav = document.getElementById('close-nav');
+
+            // Open the side navigation bar
+            menuToggle.addEventListener('click', () => {
+                sideNav.classList.add('open');
+            });
+
+            // Close the side navigation bar
+            closeNav.addEventListener('click', () => {
+                sideNav.classList.remove('open');
+            });
+
+            // Close the side navigation bar when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sideNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sideNav.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
