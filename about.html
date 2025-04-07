@@ -1,3 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.2;
+        }
+        header {
+            background-color: #9dc7f2;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        #side-nav {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Start hidden */
+            width: 250px;
+            height: 100%;
+            background: #3f4245;
+            color: white;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 1rem;
+        }
+        #side-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-bottom: 1px solid #444;
+        }
+        #side-nav a:hover {
+            background-color: #575757;
+        }
+
+        #side-nav.open {
+            left: 0; /* Slide in */
+        }
+
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #3f4245;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        #close-nav {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        #close-nav:hover {
+            color: #ff6b6b;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        h2 {
+            margin-top: 1.5rem;
+            font-size: 1.5rem;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #9dc7f2;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
 <body>
     <header>
         <h1>About Us</h1>
@@ -15,12 +127,56 @@
 
     <main>
         <section>
-            <h2>Our Mission</h2>
-            <p>We aim to empower educators and parents to create inclusive learning environments for all students.</p>
+            <h2>Together We Teach</h2>
+            <p>Together We Teach is more than just a website — it’s a heartfelt initiative created with one mission in mind:</p>
+            <p><strong>👉 To empower parents and teachers with inclusive tools, knowledge, and compassion to better support mentally disabled children in their learning journey.</strong></p>
+            <p>We believe that every child deserves to learn, grow, and shine, no matter their abilities or challenges. That’s why this platform brings together research-backed strategies, multimedia resources, real-life experiences, and interactive guides — all designed to make education accessible, engaging, and kind.</p>
+        </section>
+
+        <section>
+            <h2>Our Goal</h2>
+            <p>Our goal is to bridge the gap between traditional teaching methods and the individual needs of children with mental disabilities — by helping educators and caregivers:</p>
+            <ul>
+                <li>Understand different learning styles</li>
+                <li>Use effective communication techniques</li>
+                <li>Create supportive, sensory-friendly environments</li>
+                <li>Embrace patience, empathy, and creativity in every lesson</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Our Promise</h2>
+            <p>👨‍👩‍👧‍👦 Whether you’re a parent teaching at home, or a teacher shaping minds in the classroom, Together We Teach is here to walk with you — every step of the way.</p>
+            <p>Because when we teach together, we build a future where every child feels seen, heard, and loved. 💛</p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Community Engagement Project</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideNav = document.getElementById('side-nav');
+            const closeNav = document.getElementById('close-nav');
+
+            // Open the side navigation bar
+            menuToggle.addEventListener('click', () => {
+                sideNav.classList.add('open');
+            });
+
+            // Close the side navigation bar
+            closeNav.addEventListener('click', () => {
+                sideNav.classList.remove('open');
+            });
+
+            // Close the side navigation bar when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sideNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sideNav.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
+</html>
