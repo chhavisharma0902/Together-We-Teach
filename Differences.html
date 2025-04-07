@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Every Mind</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #9dc7f2;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        #side-nav {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Start hidden */
+            width: 250px;
+            height: 100%;
+            background: #3f4245;
+            color: white;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 1rem;
+        }
+        #side-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-bottom: 1px solid #444;
+        }
+        #side-nav a:hover {
+            background-color: #575757;
+        }
+
+        #side-nav.open {
+            left: 0; /* Slide in */
+        }
+
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #3f4245;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        #close-nav {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        #close-nav:hover {
+            color: #ff6b6b;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 1.5rem;
+            font-size: 1.5rem;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #9dc7f2;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Understanding Every Mind</h1>
+        <button id="menu-toggle">☰</button> <!-- Toggle button -->
+        <nav id="side-nav">
+            <button id="close-nav">✖</button> <!-- Close button -->
+            <a href="index.html">Home</a>
+            <a href="guides.html">Teaching Strategies</a>
+            <a href="resources.html">Resources</a>
+            <a href="Differences.html">Understanding Every Mind</a>
+            <a href="about.html">About Us</a>
+            <a href="Community.html">Join the Community</a>
+            <a href="Contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>🧠 1. ADHD (Attention Deficit Hyperactivity Disorder)</h2>
+            <p><strong>What it is:</strong></p>
+            <p>ADHD is a neurodevelopmental disorder that affects a child’s ability to pay attention, control impulses, and stay still. Children with ADHD often appear restless, have trouble following instructions, and may interrupt frequently or act impulsively without thinking.</p>
+            <p><strong>Support strategies:</strong></p>
+            <p>To support a child with ADHD, break down tasks into smaller, more manageable steps and give one instruction at a time. Use visual schedules or checklists to help them stay organized. Frequent breaks during lessons can help them release excess energy and refocus. Try using timers to create a routine and maintain their attention, and always offer encouragement and positive reinforcement for completed tasks or good behavior.</p>
+        </section>
+
+        <section>
+            <h2>📖 2. Dyslexia</h2>
+            <p><strong>What it is:</strong></p>
+            <p>Dyslexia is a specific learning disability that makes it difficult for children to read accurately and fluently. They may struggle with recognizing letters, decoding sounds, spelling, or reading comprehension. This difficulty is not related to intelligence; many children with dyslexia are highly creative and insightful.</p>
+            <p><strong>Support strategies:</strong></p>
+            <p>Phonics-based programs that teach letter-sound relationships step-by-step are very helpful. You can also support children by providing audiobooks or letting them use text-to-speech software. Give them extra time to read and use larger fonts or colored overlays to make text easier to see. Learning through multiple senses — such as reading aloud, tracing letters, or using letter tiles — can significantly improve reading skills.</p>
+        </section>
+
+        <section>
+            <h2>➗ 3. Dyscalculia</h2>
+            <p><strong>What it is:</strong></p>
+            <p>Dyscalculia is a learning disorder that affects a child’s ability to understand numbers and mathematical concepts. Children with dyscalculia may find it hard to memorize math facts, understand quantity, tell time, or manage money.</p>
+            <p><strong>Support strategies:</strong></p>
+            <p>Using hands-on tools such as number lines, counting blocks, or visual charts can make abstract math concepts more concrete. Applying math to real-life activities like cooking or shopping can help children grasp its importance. It’s also helpful to allow the use of calculators and to break down problems into simpler steps with guided examples. Repeating lessons through different methods like games, videos, and stories can reinforce understanding.</p>
+        </section>
+
+        <section>
+            <h2>🗣️ 4. Language Disorders</h2>
+            <p><strong>What it is:</strong></p>
+            <p>Language disorders affect a child’s ability to understand or use language. Children with receptive language issues may not fully understand spoken words, while those with expressive language disorders may struggle to form clear, grammatically correct sentences.</p>
+            <p><strong>Support strategies:</strong></p>
+            <p>Use pictures, gestures, and visual aids to help children understand spoken words more easily. Encourage them to speak during everyday routines, such as asking for help or describing activities. Be patient and give them time to respond without pressure. Instead of constantly correcting their mistakes, model the correct usage gently in your response. For more serious cases, working with a speech-language therapist can be very effective.</p>
+        </section>
+
+        <section>
+            <h2>✍️ 5. Written Expression Disorder (Dysgraphia)</h2>
+            <p><strong>What it is:</strong></p>
+            <p>Written expression disorder, or dysgraphia, affects a child's ability to write clearly and effectively. Children may have trouble organizing their thoughts, forming letters, using punctuation, or maintaining proper spelling. Despite having creative ideas, they may struggle to express them in written form.</p>
+            <p><strong>Support strategies:</strong></p>
+            <p>Allowing children to type on a computer instead of handwriting can make a big difference. Using graphic organizers or mind maps helps them plan their writing more clearly. Teaching writing as a process — with brainstorming, drafting, revising, and editing — provides structure. Spell check tools, voice-to-text apps, and writing assistance software can also support their expression. Focus on content and ideas first rather than neatness or grammar in early drafts to encourage confidence.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Community Engagement Project</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideNav = document.getElementById('side-nav');
+            const closeNav = document.getElementById('close-nav');
+
+            // Open the side navigation bar
+            menuToggle.addEventListener('click', () => {
+                sideNav.classList.add('open');
+            });
+
+            // Close the side navigation bar
+            closeNav.addEventListener('click', () => {
+                sideNav.classList.remove('open');
+            });
+
+            // Close the side navigation bar when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sideNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sideNav.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
