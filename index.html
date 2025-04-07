@@ -4,16 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Together We Teach</title> <!-- Updated title -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('background.jpg'); /* Add your background image here */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color:#9dc7f2 ;
+        }
+
         header h1 {
             font-family: 'Playfair Display', serif; /* Classy and professional font */
-            font-size: 3.5rem; /* Increased font size */
-            color: #333; /* Neutral and professional color */
+            font-size: 3rem; /* Increased font size */
+            color: black; /* Keep the text color white for contrast */
             text-align: center;
             margin: 0;
+            padding:  0;
             letter-spacing: 1px; /* Slight letter spacing for elegance */
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.shutterstock.com/image-illustration/happy-group-kids-girls-wheelchair-600nw-1176723229.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: #ff6b6b; /* Keep the button color vibrant */
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #e55a5a; /* Slightly darker shade on hover */
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.7rem;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent footer background */
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        #side-nav {
+            position: fixed;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 1rem;
+        }
+
+        #side-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-bottom: 1px solid #444;
+        }
+
+        #side-nav a:hover {
+            background-color: #575757;
+        }
+
+        #side-nav.open {
+            left: 0;
+        }
+
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        #close-nav {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
         }
     </style>
 </head>
@@ -23,6 +160,7 @@
         <button id="menu-toggle">☰</button> <!-- Toggle button -->
         <nav id="side-nav">
             <button id="close-nav">✖</button> <!-- Close button -->
+            <a href="index.html">Home</a>
             <a href="guides.html">Teaching Strategies</a>
             <a href="resources.html">Resources</a>
             <a href="about.html">About Us</a>
@@ -41,21 +179,24 @@
         <section class="cards">
             <div class="card">
                 <img src="https://www.globalgiving.org/pfil/40879/ph_40879_231226.jpg" alt="Inclusive Classroom">
-                <h3><u>Inclusive Classroom</u></h3>
+                <h3>Inclusive Classroom</h3>
                 <p>Discover strategies for creating an inclusive learning environment.</p>
             </div>
             <div class="card">
                 <img src="https://www.jkpi.org/wp-content/uploads/2024/01/uni159600_small.jpg" alt="Smiling Learners">
-                <h3><u>Smiling Learners</u></h3>
+                <h3>Smiling Learners</h3>
                 <p>Learn how to engage students with hands-on activities.</p>
             </div>
             <div class="card">
                 <img src="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/07/25/Pictures/_9eb57ef0-ce7c-11ea-98f0-14dc794b6a99.jpg" alt="Accessible Tools">
-                <h3><u>Accessible Tools</u></h3>
+                <h3>Accessible Tools</h3>
                 <p>Explore tools and resources for accessible education.</p>
             </div>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2025 Together We Teach. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

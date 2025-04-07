@@ -17,6 +17,46 @@
             color: white;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
+        }
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        #side-nav {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #363635;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            transition: left 0.3s ease;
+        }
+        #side-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0.5rem 0;
+        }
+        #side-nav a:hover {
+            text-decoration: underline;
+        }
+        #close-nav {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            align-self: flex-end;
         }
         .container {
             max-width: 800px;
@@ -55,21 +95,38 @@
         button:hover {
             background-color: #363635;
         }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #9dc7f2;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Join Our Community</h1>
+        <h1>Join the Community</h1>
+        <button id="menu-toggle">☰</button> <!-- Toggle button -->
+        <nav id="side-nav">
+            <button id="close-nav">✖</button> <!-- Close button -->
+            <a href="index.html">Home</a>
+            <a href="guides.html">Teaching Strategies</a>
+            <a href="resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+            <a href="Community.html">Join the Community</a>
+            <a href="Contact.html">Contact Us</a>
+        </nav>
     </header>
-    <div class="container">
-        <h2>Welcome!</h2>
-        <p>We are excited to have you join our community. Please fill out the form below to get started.</p>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="4" placeholder="Tell us why you'd like to join" required></textarea>
-            <button type="submit">Join Now</button>
-        </form>
-    </div>
+
+    <main>
+        <section>
+            <h2>Connect with Us</h2>
+            <p>Join our forums and social media groups to share ideas and resources with other educators and parents.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Community Engagement Project</p>
+    </footer>
 </body>
 </html>

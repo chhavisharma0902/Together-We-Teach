@@ -19,6 +19,60 @@
             padding: 1rem 0;
             text-align: center;
         }
+        #side-nav {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Start hidden */
+            width: 250px;
+            height: 100%;
+            background: #3f4245;
+            color: white;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 1rem;
+        }
+        #side-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-bottom: 1px solid #444;
+        }
+        #side-nav a:hover {
+            background-color: #575757;
+        }
+
+        #side-nav.open {
+            left: 0; /* Slide in */
+        }
+
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #3f4245;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        #close-nav {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        #close-nav:hover {
+            color: #ff6b6b;
+        }
+
         main {
             padding: 2rem;
         }
@@ -99,6 +153,16 @@
 <body>
     <header>
         <h1>Teaching Strategies for Mentally Disabled Students</h1>
+        <button id="menu-toggle">☰</button> <!-- Toggle button -->
+        <nav id="side-nav">
+            <button id="close-nav">✖</button> <!-- Close button -->
+            <a href="index.html">Home</a>
+            <a href="guides.html">Teaching Strategies</a>
+            <a href="resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+            <a href="Community.html">Join the Community</a>
+            <a href="Contact.html">Contact Us</a>
+        </nav>
     </header>
     <main>
         <div class="slot" data-strategy="1">
@@ -314,6 +378,29 @@
         overlay.addEventListener('click', () => {
             popup.style.display = 'none';
             overlay.style.display = 'none';
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideNav = document.getElementById('side-nav');
+            const closeNav = document.getElementById('close-nav');
+
+            // Open the side navigation bar
+            menuToggle.addEventListener('click', () => {
+                sideNav.classList.add('open');
+            });
+
+            // Close the side navigation bar
+            closeNav.addEventListener('click', () => {
+                sideNav.classList.remove('open');
+            });
+
+            // Close the side navigation bar when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sideNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sideNav.classList.remove('open');
+                }
+            });
         });
     </script>
 </body>

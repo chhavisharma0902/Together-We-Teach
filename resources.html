@@ -18,17 +18,71 @@
             padding: 1rem;
             text-align: center;
         }
+        #side-nav {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Start hidden */
+            width: 250px;
+            height: 100%;
+            background: #3f4245;
+            color: white;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 1rem;
+        }
+        #side-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-bottom: 1px solid #444;
+        }
+        #side-nav a:hover {
+            text-decoration: underline;
+        }
+
+        #side-nav.open {
+            left: 0; /* Slide in */
+        }
+
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #3f4245;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        #close-nav {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        #close-nav:hover {
+            color: #ff6b6b;
+        }
         h1 {
             margin: 0;
             font-size: 2rem;
         }
         .section {
-            margin: 15px;
+            margin: 20px;
         }
         .section h2 {
             background-color: white;
             color: black;
-            padding: 7px;
+            padding: 15px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -158,11 +212,44 @@
             const modal = document.querySelector('.image-modal');
             modal.style.display = 'none';
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideNav = document.getElementById('side-nav');
+            const closeNav = document.getElementById('close-nav');
+
+            // Open the side navigation bar
+            menuToggle.addEventListener('click', () => {
+                sideNav.classList.add('open');
+            });
+
+            // Close the side navigation bar
+            closeNav.addEventListener('click', () => {
+                sideNav.classList.remove('open');
+            });
+
+            // Close the side navigation bar when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sideNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sideNav.classList.remove('open');
+                }
+            });
+        });
     </script>
 </head>
 <body>
     <header>
         <h1>Your Toolkit for Inclusive Teaching</h1>
+        <button id="menu-toggle">☰</button> <!-- Toggle button -->
+        <nav id="side-nav">
+            <button id="close-nav">✖</button> <!-- Close button -->
+            <a href="index.html">Home</a>
+            <a href="guides.html">Teaching Strategies</a>
+            <a href="resources.html">Resources</a>
+            <a href="about.html">About Us</a>
+            <a href="Community.html">Join the Community</a>
+            <a href="Contact.html">Contact Us</a>
+        </nav>
     </header>
 
     <div class="section">
@@ -232,14 +319,7 @@
         )">4. Multimedia Learning Resources</h2>
     </div>
 
-    <div class="section">
-        <h2 onclick="openPopup('community-support', 'Community Support & Forums', 'Join forums and communities to connect with other educators and parents.')">5. Community Support & Forums</h2>
-    </div>
-
-    <div class="section">
-        <h2 onclick="openPopup('legal-rights', 'Legal Rights & Policies', 'Learn about the legal rights and policies that protect students with disabilities.')">6. Legal Rights & Policies</h2>
-    </div>
-
+    
     <!-- Popup and Overlay -->
     <div class="overlay" onclick="closePopup()"></div>
     <div class="popup">
