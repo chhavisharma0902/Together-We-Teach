@@ -11,24 +11,14 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
-            line-height: 1.6;
         }
         header {
             background-color: #9dc7f2;
             color: white;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* keeps button on left, title on right */
+            padding: 1rem 0;
+            text-align: center;
             position: relative;
         }
-
-
-        header h1 {
-            text-align: center; /* Only center the title, not everything in the header */
-            margin: 0;
-        }
-
         #side-nav {
             position: fixed;
             top: 0;
@@ -58,19 +48,16 @@
         }
 
         #menu-toggle {
-            position: absolute; /* Fixed position to stay in the upper-left corner */
-            top: 10px; /* Distance from the top of the page */
-            left: 10px; /* Distance from the left of the page */
-            background: #3f4245;
+            position: absolute; /* Keep the button in the upper-left corner */
+            top: 15px; /* Distance from the top of the page */
+            right: 96%; /* Distance from the left of the page */;
+            background : #3f4245;
             color: white;
             border: none;
-            padding: 0.5rem 0.8rem; /* Adjusted padding for a smaller button */
-            font-size: 1rem; /* Adjusted font size */
+            text-align: end;
+            padding: 0.5rem 1rem; /* Adjusted padding for a smaller button */
             cursor: pointer;
             z-index: 1101; /* Ensure it stays above other elements */
-            border-radius: 4px; /* Added rounded corners for a cleaner look */
-            text-align: left;
-
         }
         #menu-toggle:hover {
             background-color: #575757; /* Slightly lighter color on hover */
@@ -175,9 +162,8 @@
 </head>
 <body>
     <header>
-        <button id="menu-toggle">☰</button>
         <h1>Contact Us</h1>
-    
+        <button id="menu-toggle">☰</button>
         <nav id="side-nav">
             <button id="close-nav">✖</button>
             <a href="index.html">Home</a>
