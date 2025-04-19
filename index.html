@@ -17,6 +17,12 @@
             background-attachment: fixed;
             background-color:#9dc7f2 ;
         }
+        header {
+            background-color: #9dc7f2 ;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
 
         header h1 {
             font-family: 'Playfair Display', serif; /* Classy and professional font */
@@ -24,8 +30,7 @@
             color: black; /* Keep the text color white for contrast */
             text-align: center;
             margin: 0;
-            padding:  0;
-            letter-spacing: 1px; /* Slight letter spacing for elegance */
+            padding:  0; /* Slight letter spacing for elegance */
         }
 
         .hero {
@@ -105,9 +110,10 @@
         #side-nav {
             position: fixed;
             top: 0;
+            left: -300px; /* Start hidden */
             width: 250px;
             height: 100%;
-            background-color: #333;
+            background: #3f4245;
             color: white;
             overflow-y: auto;
             transition: left 0.3s ease;
@@ -116,10 +122,9 @@
         }
 
         #side-nav a {
-            display: block;
             color: white;
             text-decoration: none;
-            padding: 1rem;
+            padding: 0 ;
             border-bottom: 1px solid #444;
         }
 
@@ -141,6 +146,11 @@
             padding: 0.5rem 1rem;
             cursor: pointer;
             z-index: 1100;
+            border-radius: 8px; /* Added curvy edges */
+        }
+
+        #menu-toggle:hover {
+            background-color: #575757; /* Optional: Add hover effect */
         }
 
         #close-nav {

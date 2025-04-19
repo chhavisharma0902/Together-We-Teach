@@ -103,10 +103,94 @@
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            background-color: #9dc7f2;
+            padding: 0.5 rem;
+            background-color: #9dc7f2 ;
             color: white;
-            margin-top: 2rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+            gap: 1rem; /* Add spacing between buttons */
+            justify-content: space-evenly; /* Distribute buttons evenly */
+            margin: 2rem 0;
+        }
+
+        .button-container button {
+            width: 150px; /* Fixed width for all buttons */
+            height: 50px; /* Fixed height for all buttons */
+            font-size: 1rem;
+            background-color: #9dc7f2;
+            color: black;
+            border: none;
+            border-radius: 20px; /* Curvy edges */
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            align-items: center; /* Center text vertically */
+            justify-content: center; /* Center text horizontally */
+        }
+
+        .button-container button:hover {
+            background-color: #9d95ea; /* Change color on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .popup-content button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: rgb(255, 219, 88);
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .popup-content button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+    <style>
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+            border-radius: 8px; /* Added curvy edges */
+        }
+
+        #menu-toggle:hover {
+            background-color: #575757; /* Optional: Add hover effect */
         }
     </style>
 </head>
@@ -128,44 +212,43 @@
 
     <main>
         <section>
-            <h2>🧠 1. ADHD (Attention Deficit Hyperactivity Disorder)</h2>
-            <p><strong>What it is:</strong></p>
-            <p>ADHD is a neurodevelopmental disorder that affects a child’s ability to pay attention, control impulses, and stay still. Children with ADHD often appear restless, have trouble following instructions, and may interrupt frequently or act impulsively without thinking.</p>
-            <p><strong>Support strategies:</strong></p>
-            <p>To support a child with ADHD, break down tasks into smaller, more manageable steps and give one instruction at a time. Use visual schedules or checklists to help them stay organized. Frequent breaks during lessons can help them release excess energy and refocus. Try using timers to create a routine and maintain their attention, and always offer encouragement and positive reinforcement for completed tasks or good behavior.</p>
+            <div class="button-container">
+                <!-- ADHD -->
+                <button onclick="showPopup('ADHD', 'ADHD-(Attention Deficit Hyperactivity Disorder) is a neurodevelopmental disorder that affects a child’s ability to pay attention, control impulses, and stay still. Children with ADHD often appear restless, have trouble following instructions, and may interrupt frequently or act impulsively without thinking.', 'To support a child with ADHD, break down tasks into smaller, more manageable steps and give one instruction at a time. Use visual schedules or checklists to help them stay organized. Frequent breaks during lessons can help them release excess energy and refocus. Try using timers to create a routine and maintain their attention, and always offer encouragement and positive reinforcement for completed tasks or good behavior.')">
+                    🧠 ADHD 
+                </button>
+
+                <!-- Dyslexia -->
+                <button onclick="showPopup('Dyslexia', 'Dyslexia is a specific learning disability that makes it difficult for children to read accurately and fluently. They may struggle with recognizing letters, decoding sounds, spelling, or reading comprehension.', 'Phonics-based programs that teach letter-sound relationships step-by-step are very helpful. You can also support children by providing audiobooks or letting them use text-to-speech software. Give them extra time to read and use larger fonts or colored overlays to make text easier to see. Learning through multiple senses — such as reading aloud, tracing letters, or using letter tiles — can significantly improve reading skills.')">
+                    📖 Dyslexia
+                </button>
+
+                <!-- Dyscalculia -->
+                <button onclick="showPopup('Dyscalculia', 'Dyscalculia is a learning disorder that affects a child’s ability to understand numbers and mathematical concepts. Children with dyscalculia may find it hard to memorize math facts, understand quantity, tell time, or manage money.', 'Using hands-on tools such as number lines, counting blocks, or visual charts can make abstract math concepts more concrete. Applying math to real-life activities like cooking or shopping can help children grasp its importance. It’s also helpful to allow the use of calculators and to break down problems into simpler steps with guided examples. Repeating lessons through different methods like games, videos, and stories can reinforce understanding.')">
+                    ➗ Dyscalculia
+                </button>
+
+                <!-- Language Disorders -->
+                <button onclick="showPopup('Language Disorders', 'Language disorders affect a child’s ability to understand or use language. Children with receptive language issues may not fully understand spoken words, while those with expressive language disorders may struggle to form clear, grammatically correct sentences.', 'Use pictures, gestures, and visual aids to help children understand spoken words more easily. Encourage them to speak during everyday routines, such as asking for help or describing activities. Be patient and give them time to respond without pressure. Instead of constantly correcting their mistakes, model the correct usage gently in your response. For more serious cases, working with a speech-language therapist can be very effective.')">
+                    🗣️ Language Disorders
+                </button>
+
+                <!-- Dysgraphia -->
+                <button onclick="showPopup('Dysgraphia', 'Written expression disorder, or dysgraphia, affects a child\'s ability to write clearly and effectively. Children may have trouble organizing their thoughts, forming letters, using punctuation, or maintaining proper spelling.', 'Allowing children to type on a computer instead of handwriting can make a big difference. Using graphic organizers or mind maps helps them plan their writing more clearly. Teaching writing as a process — with brainstorming, drafting, revising, and editing — provides structure. Spell check tools, voice-to-text apps, and writing assistance software can also support their expression. Focus on content and ideas first rather than neatness or grammar in early drafts to encourage confidence.')">
+                    ✍️ Dysgraphia
+                </button>
+            </div>
         </section>
 
-        <section>
-            <h2>📖 2. Dyslexia</h2>
-            <p><strong>What it is:</strong></p>
-            <p>Dyslexia is a specific learning disability that makes it difficult for children to read accurately and fluently. They may struggle with recognizing letters, decoding sounds, spelling, or reading comprehension. This difficulty is not related to intelligence; many children with dyslexia are highly creative and insightful.</p>
-            <p><strong>Support strategies:</strong></p>
-            <p>Phonics-based programs that teach letter-sound relationships step-by-step are very helpful. You can also support children by providing audiobooks or letting them use text-to-speech software. Give them extra time to read and use larger fonts or colored overlays to make text easier to see. Learning through multiple senses — such as reading aloud, tracing letters, or using letter tiles — can significantly improve reading skills.</p>
-        </section>
-
-        <section>
-            <h2>➗ 3. Dyscalculia</h2>
-            <p><strong>What it is:</strong></p>
-            <p>Dyscalculia is a learning disorder that affects a child’s ability to understand numbers and mathematical concepts. Children with dyscalculia may find it hard to memorize math facts, understand quantity, tell time, or manage money.</p>
-            <p><strong>Support strategies:</strong></p>
-            <p>Using hands-on tools such as number lines, counting blocks, or visual charts can make abstract math concepts more concrete. Applying math to real-life activities like cooking or shopping can help children grasp its importance. It’s also helpful to allow the use of calculators and to break down problems into simpler steps with guided examples. Repeating lessons through different methods like games, videos, and stories can reinforce understanding.</p>
-        </section>
-
-        <section>
-            <h2>🗣️ 4. Language Disorders</h2>
-            <p><strong>What it is:</strong></p>
-            <p>Language disorders affect a child’s ability to understand or use language. Children with receptive language issues may not fully understand spoken words, while those with expressive language disorders may struggle to form clear, grammatically correct sentences.</p>
-            <p><strong>Support strategies:</strong></p>
-            <p>Use pictures, gestures, and visual aids to help children understand spoken words more easily. Encourage them to speak during everyday routines, such as asking for help or describing activities. Be patient and give them time to respond without pressure. Instead of constantly correcting their mistakes, model the correct usage gently in your response. For more serious cases, working with a speech-language therapist can be very effective.</p>
-        </section>
-
-        <section>
-            <h2>✍️ 5. Written Expression Disorder (Dysgraphia)</h2>
-            <p><strong>What it is:</strong></p>
-            <p>Written expression disorder, or dysgraphia, affects a child's ability to write clearly and effectively. Children may have trouble organizing their thoughts, forming letters, using punctuation, or maintaining proper spelling. Despite having creative ideas, they may struggle to express them in written form.</p>
-            <p><strong>Support strategies:</strong></p>
-            <p>Allowing children to type on a computer instead of handwriting can make a big difference. Using graphic organizers or mind maps helps them plan their writing more clearly. Teaching writing as a process — with brainstorming, drafting, revising, and editing — provides structure. Spell check tools, voice-to-text apps, and writing assistance software can also support their expression. Focus on content and ideas first rather than neatness or grammar in early drafts to encourage confidence.</p>
-        </section>
+        <!-- Popup Modal -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <h3 id="popup-title"></h3>
+                <p id="popup-description"></p>
+                <p id="popup-strategies"></p>
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -177,23 +260,25 @@
             const sideNav = document.getElementById('side-nav');
             const closeNav = document.getElementById('close-nav');
 
-            // Open the side navigation bar
             menuToggle.addEventListener('click', () => {
-                sideNav.classList.add('open');
+                sideNav.classList.toggle('open');
             });
 
-            // Close the side navigation bar
             closeNav.addEventListener('click', () => {
                 sideNav.classList.remove('open');
             });
-
-            // Close the side navigation bar when clicking outside
-            document.addEventListener('click', (event) => {
-                if (!sideNav.contains(event.target) && !menuToggle.contains(event.target)) {
-                    sideNav.classList.remove('open');
-                }
-            });
         });
+
+        function showPopup(title, description, strategies) {
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-description').innerText = description;
+            document.getElementById('popup-strategies').innerText = strategies;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
     </script>
 </body>
 </html>

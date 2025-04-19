@@ -148,6 +148,97 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+            gap: 1.5rem; /* Add spacing between buttons */
+            justify-content: space-evenly; /* Distribute buttons evenly */
+            margin: 2rem 0;
+        }
+
+        .button-container button {
+            width: 200px; /* Increased width */
+            height: 50px; /* Increased height */
+            font-size: 0.5rem; /* Larger font size */
+            background-color: #9dc7f2; /* New green color */
+            color: black;
+            border: none;
+            border-radius: 30px; /* Curvy edges */
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            align-items: center; /* Center text vertically */
+            justify-content: center; /* Center text horizontally */
+        }
+
+        .button-container button:hover {
+            background-color: #9d95ea; /* Slightly darker green on hover */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+        /* Main container for image and buttons */
+        .content-container {
+            display: flex;
+            align-items: flex-start; /* Align items at the top */
+            gap: 2rem; /* Space between the image and buttons */
+            margin: 1rem; /* Reduced margin for compact layout */
+        }
+
+        /* Image container */
+        .image-container img {
+            width: 300px; /* Set the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 20px; /* Curvy edges */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        }
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+            gap: 1rem; /* Reduced spacing between buttons */
+            justify-content: flex-start; /* Align buttons to the left */
+            margin-top: 0; /* Remove extra top margin */
+        }
+
+        .button-container button {
+            width: 250px; /* Increased width */
+            height: 80px; /* Increased height */
+            font-size: 1.2rem; /* Larger font size */
+            background-color: #9dc7f2; /* New green color */
+            color: black;
+            border: none;
+            border-radius: 30px; /* Curvy edges */
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            align-items: center; /* Center text vertically */
+            justify-content: center; /* Center text horizontally */
+        }
+
+        .button-container button:hover {
+            background-color: #9d95ea; /* Slightly darker green on hover */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1100;
+            border-radius: 8px; /* Added curvy edges */
+        }
+
+        #menu-toggle:hover {
+            background-color: #575757; /* Optional: Add hover effect */
+        }
     </style>
 </head>
 <body>
@@ -166,46 +257,45 @@
         </nav>
     </header>
     <main>
-        <div class="slot" data-strategy="1">
-            <h2>1. Individualized Instruction</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="2">
-            <h2>2. Visual Aids and Hands-On Learning</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="3">
-            <h2>3. Repetition and Practice</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="4">
-            <h2>4. Simple Language and Clear Instructions</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="5">
-            <h2>5. Positive Reinforcement</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="6">
-            <h2>6. Peer Support and Social Skills Training</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="7">
-            <h2>7. Modify Materials and Assessment</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="8">
-            <h2>8. Use of Technology</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="9">
-            <h2>9. Patience and Emotional Support</h2>
-            <p>Click to learn more...</p>
-        </div>
-        <div class="slot" data-strategy="10">
-            <h2>10. Family Involvement</h2>
-            <p>Click to learn more...</p>
-        </div>
+        <section class="content-container">
+            <!-- Image Section -->
+            <div class="image-container">
+                <img src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-dc94-51f8-b35d-08aef9af7aab/raw?se=2025-04-19T19%3A37%3A01Z&sp=r&sv=2024-08-04&sr=b&scid=46030a4e-5274-5bb5-971b-f634cf153978&skoid=a3336399-497e-45e5-8f28-4b88ecca3d1f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-19T18%3A26%3A54Z&ske=2025-04-20T18%3A26%3A54Z&sks=b&skv=2024-08-04&sig=YJp3f%2BUXRYGsKIiDpOs1i6kTZJU9PinqzE%2BjxJVI2Xw%3D" alt="Teaching Strategies">
+            </div>
+
+            <!-- Buttons Section -->
+            <div class="button-container">
+                <!-- Individualized Instruction -->
+                <button onclick="showPopup(1)">Individualized Instruction</button>
+
+                <!-- Visual Aids and Hands-On Learning -->
+                <button onclick="showPopup(2)">Visual Aids and Hands-On Learning</button>
+
+                <!-- Repetition and Practice -->
+                <button onclick="showPopup(3)">Repetition and Practice</button>
+
+                <!-- Simple Language and Clear Instructions -->
+                <button onclick="showPopup(4)">Simple Language and Clear Instructions</button>
+
+                <!-- Positive Reinforcement -->
+                <button onclick="showPopup(5)">Positive Reinforcement</button>
+
+                <!-- Peer Support and Social Skills Training -->
+                <button onclick="showPopup(6)">Peer Support and Social Skills Training</button>
+
+                <!-- Modify Materials and Assessment -->
+                <button onclick="showPopup(7)">Modify Materials and Assessment</button>
+
+                <!-- Use of Technology -->
+                <button onclick="showPopup(8)">Use of Technology</button>
+
+                <!-- Patience and Emotional Support -->
+                <button onclick="showPopup(9)">Patience and Emotional Support</button>
+
+                <!-- Family Involvement -->
+                <button onclick="showPopup(10)">Family Involvement</button>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Community Engagement Project</p>
@@ -354,22 +444,19 @@
             }
         };
 
-        const slots = document.querySelectorAll('.slot');
         const popup = document.querySelector('.popup');
         const overlay = document.querySelector('.overlay');
         const popupTitle = document.getElementById('popup-title');
         const popupContent = document.getElementById('popup-content');
         const closeBtn = document.querySelector('.close-btn');
 
-        slots.forEach(slot => {
-            slot.addEventListener('click', () => {
-                const strategyId = slot.getAttribute('data-strategy');
-                popupTitle.textContent = strategies[strategyId].title;
-                popupContent.innerHTML = strategies[strategyId].content;
-                popup.style.display = 'block';
-                overlay.style.display = 'block';
-            });
-        });
+        function showPopup(strategyId) {
+            const strategy = strategies[strategyId];
+            popupTitle.textContent = strategy.title;
+            popupContent.innerHTML = strategy.content;
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        }
 
         closeBtn.addEventListener('click', () => {
             popup.style.display = 'none';
