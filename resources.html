@@ -188,6 +188,29 @@
         .image-modal .close-btn:hover {
             background-color: #e6b800;
         }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .button-container button {
+            background-color: #3c5b7f; /* Blue */
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #357ABD; /* Darker Blue */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
     </style>
     <script>
         function openPopup(sectionId, title, content) {
@@ -259,70 +282,70 @@
     </header>
 
     <div class="section">
-        <h2 onclick="openPopup(
-            'educational-tools', 
-            'Educational Tools & Materials', 
-            `
-            <p>Explore tools like flashcards, manipulatives, and digital apps to enhance learning.</p>
-            <div style='display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;'>
-                <img src='https://m.media-amazon.com/images/I/91emP+gqy+L.jpg' alt='Flashcards' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
-                <img src='https://m.media-amazon.com/images/I/71DI5TbjHqL.jpg' alt='Learning Tools' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
-                <img src='https://study.com/cimages/multimages/16/dailyschedules.png' alt='Daily Schedules' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
-                <img src='https://study.com/cimages/multimages/16/singleactivityschedule.png' alt='Daily Schedules 2' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
-            </div>
-            `
-        )"> Educational Tools & Materials</h2>
-    </div>
+        <div class="button-container">
+            <!-- Educational Tools & Materials -->
+            <button onclick="openPopup(
+                'educational-tools', 
+                'Educational Tools & Materials', 
+                `
+                <p>Explore tools like flashcards, manipulatives, and digital apps to enhance learning.</p>
+                <div style='display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;'>
+                    <img src='https://m.media-amazon.com/images/I/91emP+gqy+L.jpg' alt='Flashcards' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+                    <img src='https://m.media-amazon.com/images/I/71DI5TbjHqL.jpg' alt='Learning Tools' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+                    <img src='https://study.com/cimages/multimages/16/dailyschedules.png' alt='Daily Schedules' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+                    <img src='https://study.com/cimages/multimages/16/singleactivityschedule.png' alt='Daily Schedules 2' style='width: 150px; border-radius: 5px; cursor: pointer;' onclick='enlargeImage(this.src)'>
+                </div>
+                `
+            )">Educational Tools & Materials</button>
 
-    <div class="section">
-        <h2 onclick="openPopup(
-            'guides-best-practices', 
-            'Guides & Best Practices', 
-            `
-            <p>Access step-by-step guides and proven strategies for inclusive teaching:</p>
-            <a href='https://1drv.ms/b/c/3227ebca7be93cba/EVcJZgg98ttMlzUJIk4mVYwBUE2ZUJJY7lEANGL18OmBFw?e=FdU8jv' target='_blank'>Guide 1: Educational Resources for Students with Autism Spectrum Disorders</a>
-            <a href='https://1drv.ms/b/c/3227ebca7be93cba/EfB9XZugEqtFh3xvXBdzAsEBiKIPw5Cgqd8pE2tslYz-9g?e=xXApZS' target='_blank'>Guide 2: Understanding and Identifying Specific Learning Difficulties:Dyslexia, Autism Spectrum, and Attention Deficit/Hyperactivity in the Adult ESL/EFL Classroom</a>
-            <a href='https://1drv.ms/b/c/3227ebca7be93cba/EReXTH0_Ov9CrWvmV2jSP5ABJdPtfNIhjWcagNT9Q3cCew?e=tiDwxJ' target='_blank'>Guide 3: Teaching for Neurodiversity :A Guide to Specific Learning Difficulties</a>
-            `
-        )"> Guides & Best Practices</h2>
-    </div>
+            <!-- Guides & Best Practices -->
+            <button onclick="openPopup(
+                'guides-best-practices', 
+                'Guides & Best Practices', 
+                `
+                <p>Access step-by-step guides and proven strategies for inclusive teaching:</p>
+                <a href='https://1drv.ms/b/c/3227ebca7be93cba/EVcJZgg98ttMlzUJIk4mVYwBUE2ZUJJY7lEANGL18OmBFw?e=FdU8jv' target='_blank'>Guide 1: Educational Resources for Students with Autism Spectrum Disorders</a>
+                <a href='https://1drv.ms/b/c/3227ebca7be93cba/EfB9XZugEqtFh3xvXBdzAsEBiKIPw5Cgqd8pE2tslYz-9g?e=xXApZS' target='_blank'>Guide 2: Understanding and Identifying Specific Learning Difficulties</a>
+                <a href='https://1drv.ms/b/c/3227ebca7be93cba/EReXTH0_Ov9CrWvmV2jSP5ABJdPtfNIhjWcagNT9Q3cCew?e=tiDwxJ' target='_blank'>Guide 3: Teaching for Neurodiversity</a>
+                `
+            )">Guides & Best Practices</button>
 
-    <div class="section">
-        <h2 onclick="openPopup(
-            'external-links', 
-            'External Links to Trusted Organizations', 
-            `
-            <p>Find links to trusted organizations offering resources for special education:</p>
-            <a href='https://exceptionalchildren.org' target='_blank'>1. The Council for Exceptional Children (CEC)</a>
-            <p>Focus: Advocacy, training, and resources for special education professionals.</p>
-            <a href='https://www.understood.org/' target='_blank'>2. Understood</a>
-            <p>Focus: Supporting parents and educators of children with learning and thinking differences like ADHD and dyslexia.</p>
-            <a href='https://www.specialolympics.org/' target='_blank'>3. Special Olympics Resources</a>
-            <p>Focus: To provide inclusive sports, health, and educational support for individuals with intellectual disabilities.</p>
-            <a href='https://www.autismspeaks.org' target='_blank'>4. Autism Speaks</a>
-            <p>Focus: Autism awareness, toolkits, and support.</p>
-            <a href='https://thearc.org' target='_blank'>5. The Arc</a>
-            <p>Focus: Advocacy and support for people with intellectual and developmental disabilities.</p>
-            `
-        )"> External Links to Trusted Organizations</h2>
-    </div>
+            <!-- External Links -->
+            <button onclick="openPopup(
+                'external-links', 
+                'External Links to Trusted Organizations', 
+                `
+                <p>Find links to trusted organizations offering resources for special education:</p>
+                <a href='https://exceptionalchildren.org' target='_blank'>1. The Council for Exceptional Children (CEC)</a>
+                <p>Focus: Advocacy, training, and resources for special education professionals.</p>
+                <a href='https://www.understood.org/' target='_blank'>2. Understood</a>
+                <p>Focus: Supporting parents and educators of children with learning and thinking differences like ADHD and dyslexia.</p>
+                <a href='https://www.specialolympics.org/' target='_blank'>3. Special Olympics Resources</a>
+                <p>Focus: To provide inclusive sports, health, and educational support for individuals with intellectual disabilities.</p>
+                <a href='https://www.autismspeaks.org' target='_blank'>4. Autism Speaks</a>
+                <p>Focus: Autism awareness, toolkits, and support.</p>
+                <a href='https://thearc.org' target='_blank'>5. The Arc</a>
+                <p>Focus: Advocacy and support for people with intellectual and developmental disabilities.</p>
+                `
+            )">External Links to Trusted Organizations</button>
 
-    <div class="section">
-        <h2 onclick="openPopup(
-            'multimedia-resources', 
-            'Multimedia Learning Resources', 
-            `
-            <p>Discover videos, podcasts, and interactive tools for engaging learning:</p>
-            <a href='http://www.youtube.com/@RyanJuddMusic' target='_blank'>1.Ryan Judd</a>
-            <p>Focus: Music therapy and relaxation techniques for children.</p>
-            <a href='http://www.youtube.com/@BusyBeavers' target='_blank'>2.Busy Beavers</a>
-            <p>Focus: Fun and educational songs for young learners.</p>
-            <a href='http://www.youtube.com/@nipinthebud3744' target='_blank'>3.Nip in the Bud</a>
-            <p>Focus: Mental health awareness and support for children.</p>
-            <a href='http://www.youtube.com/@WandsworthLocalOffer' target='_blank'>4.Wandsworth Local Offer</a>
-            <p>Focus: Resources and support for children with special educational needs.</p>
-            `
-        )"> Multimedia Learning Resources</h2>
+            <!-- Multimedia Learning Resources -->
+            <button onclick="openPopup(
+                'multimedia-resources', 
+                'Multimedia Learning Resources', 
+                `
+                <p>Discover videos, podcasts, and interactive tools for engaging learning:</p>
+                <a href='http://www.youtube.com/@RyanJuddMusic' target='_blank'>1. Ryan Judd</a>
+                <p>Focus: Music therapy and relaxation techniques for children.</p>
+                <a href='http://www.youtube.com/@BusyBeavers' target='_blank'>2. Busy Beavers</a>
+                <p>Focus: Fun and educational songs for young learners.</p>
+                <a href='http://www.youtube.com/@nipinthebud3744' target='_blank'>3. Nip in the Bud</a>
+                <p>Focus: Mental health awareness and support for children.</p>
+                <a href='http://www.youtube.com/@WandsworthLocalOffer' target='_blank'>4. Wandsworth Local Offer</a>
+                <p>Focus: Resources and support for children with special educational needs.</p>
+                `
+            )">Multimedia Learning Resources</button>
+        </div>
     </div>
 
     

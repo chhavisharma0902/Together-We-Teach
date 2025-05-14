@@ -11,58 +11,75 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-image: url('background.jpg'); /* Add your background image here */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-color:#9dc7f2 ;
+            background-color: #9dc7f2; /* Soft Light Blue */
+            color: #023047; /* Dark Blue */
         }
+
         header {
-            background-color: #9dc7f2 ;
-            color: white;
+            background-color: #9dc7f2; /* Deep Blue */
+            color: black;
             text-align: center;
-            position: relative;
+            padding: 1rem;
         }
 
         header h1 {
-            font-family: 'Playfair Display', serif; /* Classy and professional font */
-            font-size: 3rem; /* Increased font size */
-            color: black; /* Keep the text color white for contrast */
-            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             margin: 0;
-            padding:  0; /* Slight letter spacing for elegance */
         }
 
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.shutterstock.com/image-illustration/happy-group-kids-girls-wheelchair-600nw-1176723229.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem; /* Increased padding for better spacing */
             margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px; /* Restrict content width for better readability */
+            margin: 0 auto; /* Center the content horizontally */
         }
 
         .hero-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem; /* Slightly larger heading */
+            margin-bottom: 1rem; /* Add spacing below the heading */
+            line-height: 1.2; /* Improve line spacing */
         }
 
         .hero-content p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem; /* Add spacing below the paragraph */
+            line-height: 1.6; /* Improve readability */
         }
 
-        .cta-button {
-            background-color: #ff6b6b; /* Keep the button color vibrant */
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            background: linear-gradient(90deg, #4A90E2, #50C9C3); /* Gradient from Blue to Teal */
+            padding: 0.8rem 1rem;
+            border-radius: 8px; /* Rounded edges */
+            max-width: 1100px;
+            margin: 0 auto; /* Center the navigation bar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .top-nav a {
+            color: white; /* White text for contrast */
+            text-decoration: none;
             font-size: 1rem;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
-            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .cta-button:hover {
-            background-color: #e55a5a; /* Slightly darker shade on hover */
+        .top-nav a:hover {
+            background-color: #E6E6FA; /* Lavender */
+            color: black; /* Black text for contrast */
         }
 
         .cards {
@@ -74,7 +91,7 @@
         }
 
         .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background-color: white; /* Light Aqua */
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -90,7 +107,7 @@
 
         .card h3 {
             font-size: 1.5rem;
-            color: #333;
+            color: #023047; /* Dark Blue */
             margin: 1rem 0 0.5rem;
         }
 
@@ -102,90 +119,31 @@
         footer {
             text-align: center;
             padding: 0.7rem;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent footer background */
+            background-color: rgba(0, 0, 0, 0.7); /* Deep Blue */
             color: white;
             font-size: 0.9rem;
-        }
-
-        #side-nav {
-            position: fixed;
-            top: 0;
-            left: -300px; /* Start hidden */
-            width: 250px;
-            height: 100%;
-            background: #3f4245;
-            color: white;
-            overflow-y: auto;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            padding-top: 1rem;
-        }
-
-        #side-nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0 ;
-            border-bottom: 1px solid #444;
-        }
-
-        #side-nav a:hover {
-            background-color: #575757;
-        }
-
-        #side-nav.open {
-            left: 0;
-        }
-
-        #menu-toggle {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            z-index: 1100;
-            border-radius: 8px; /* Added curvy edges */
-        }
-
-        #menu-toggle:hover {
-            background-color: #575757; /* Optional: Add hover effect */
-        }
-
-        #close-nav {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Together We Teach</h1> <!-- Updated website name -->
-        <button id="menu-toggle">☰</button> <!-- Toggle button -->
-        <nav id="side-nav">
-            <button id="close-nav">✖</button> <!-- Close button -->
-            <a href="index.html">Home</a>
-            <a href="guides.html">Teaching Strategies</a>
-            <a href="resources.html">Resources</a>
-            <a href="Differences.html">Understanding Every Mind</a>
-            <a href="about.html">About Us</a>
-            <a href="Community.html">Join the Community</a>
-            <a href="Contact.html">Contact Us</a>
-        </nav>
+        <h1>Together We Teach</h1> <!-- Website name -->
     </header>
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h2>Welcome to Together We Teach</h2> <!-- Updated welcome message -->
+                <h2>Welcome to Together We Teach</h2> <!-- Welcome message -->
                 <p>Empowering parents and teachers to support students with mental disabilities.</p>
-                <button class="cta-button" onclick="location.href='guides.html'">Explore Teaching Strategies</button>
             </div>
+            <nav class="top-nav">
+                <a href="index.html">Home</a>
+                <a href="guides.html">Teaching Strategies</a>
+                <a href="resources.html">Resources</a>
+                <a href="Differences.html">Understanding Every Mind</a>
+                <a href="about.html">About Us</a>
+                <a href="Community.html">Join the Community</a>
+                <a href="Contact.html">Contact Us</a>
+            </nav>
         </section>
         <section class="cards">
             <div class="card">
