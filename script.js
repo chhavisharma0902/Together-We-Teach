@@ -27,3 +27,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+const profileIcon = document.getElementById('profileIcon');
+const profileDropdown = document.getElementById('profileDropdown');
+profileIcon.onclick = function() {
+    profileDropdown.style.display = profileDropdown.style.display === 'block' ? 'none' : 'block';
+    };
+// Hide dropdown when clicking outside
+document.addEventListener('click', function(e) {
+    if (!profileIcon.contains(e.target) && !profileDropdown.contains(e.target)) {
+            profileDropdown.style.display = 'none';
+        }
+    });
+// Logout button
+document.getElementById('logoutBtn').onclick = function() {
+    // Here you can clear session/localStorage if needed
+     window.location.href = 'home.html';
+    };

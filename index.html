@@ -27,6 +27,62 @@
             font-size: 3rem;
             margin: 0;
         }
+        /* Profile icon and dropdown */
+        .profile-container {
+            position: absolute;
+            top: 1.2rem;
+            right: 2rem;
+            z-index: 10;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #4A90E2;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-dropdown {
+            display: none;
+            position: absolute;
+            top: 48px;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            min-width: 120px;
+            padding: 0.5rem 0;
+        }
+
+        .profile-dropdown button {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #023047;
+            padding: 0.7rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .profile-dropdown button:hover {
+            background: #f0f0f0;
+        }
 
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.shutterstock.com/image-illustration/happy-group-kids-girls-wheelchair-600nw-1176723229.jpg') no-repeat center center/cover;
@@ -129,6 +185,15 @@
     <header>
         <h1>Together We Teach</h1> <!-- Website name -->
     </header>
+    <!-- Add this after <header> -->
+    <div class="profile-container">
+        <div class="profile-icon" id="profileIcon" title="Profile">
+            <img src="user-profile.png" alt="User Profile" />
+        </div>
+        <div class="profile-dropdown" id="profileDropdown">
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -157,15 +222,16 @@
                 <p>Learn how to engage students with hands-on activities.</p>
             </div>
             <div class="card">
-                <img src="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/07/25/Pictures/_9eb57ef0-ce7c-11ea-98f0-14dc794b6a99.jpg" alt="Accessible Tools">
-                <h3>Accessible Tools</h3>
-                <p>Explore tools and resources for accessible education.</p>
+                <img src="tools.avif" height="200" alt="Accessible Tools">
+                <center><h3>Accessible Tools</h3>
+                <p>Explore tools and resources for accessible education.</p></center>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 Together We Teach. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js">
+    </script>
 </body>
 </html>
