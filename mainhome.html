@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together We Teach</title> <!-- Updated title -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #9dc7f2; /* Soft Light Blue */
+            color: #023047; /* Dark Blue */
+        }
+
+        header {
+            background-color: #9dc7f2; /* Deep Blue */
+            color: black;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+        }
+        /* Profile icon and dropdown */
+        .profile-container {
+            position: absolute;
+            top: 1.2rem;
+            right: 2rem;
+            z-index: 10;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #4A90E2;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-dropdown {
+            display: none;
+            position: absolute;
+            top: 48px;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            min-width: 120px;
+            padding: 0.5rem 0;
+        }
+
+        .profile-dropdown button {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #023047;
+            padding: 0.7rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .profile-dropdown button:hover {
+            background: #f0f0f0;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.shutterstock.com/image-illustration/happy-group-kids-girls-wheelchair-600nw-1176723229.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem; /* Increased padding for better spacing */
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px; /* Restrict content width for better readability */
+            margin: 0 auto; /* Center the content horizontally */
+        }
+
+        .hero-content h2 {
+            font-size: 2.8rem; /* Slightly larger heading */
+            margin-bottom: 1rem; /* Add spacing below the heading */
+            line-height: 1.2; /* Improve line spacing */
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem; /* Add spacing below the paragraph */
+            line-height: 1.6; /* Improve readability */
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            background: linear-gradient(90deg, #4A90E2, #50C9C3); /* Gradient from Blue to Teal */
+            padding: 0.8rem 1rem;
+            border-radius: 8px; /* Rounded edges */
+            max-width: 1100px;
+            margin: 0 auto; /* Center the navigation bar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .top-nav a {
+            color: white; /* White text for contrast */
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .top-nav a:hover {
+            background-color: #E6E6FA; /* Lavender */
+            color: black; /* Black text for contrast */
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background-color: white; /* Light Aqua */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #023047; /* Dark Blue */
+            margin: 1rem 0 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.7rem;
+            background-color: rgba(0, 0, 0, 0.7); /* Deep Blue */
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Together We Teach</h1> <!-- Website name -->
+    </header>
+    <!-- Add this after <header> -->
+    <div class="profile-container">
+        <div class="profile-icon" id="profileIcon" title="Profile">
+            <img src="user-profile.png" alt="User Profile" />
+        </div>
+        <div class="profile-dropdown" id="profileDropdown">
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to Together We Teach</h2> <!-- Welcome message -->
+                <p>Empowering parents and teachers to support students with mental disabilities.</p>
+            </div>
+            <nav class="top-nav">
+                <a href="mainhome.html">Home</a>
+                <a href="guides.html">Teaching Strategies</a>
+                <a href="resources.html">Resources</a>
+                <a href="Differences.html">Understanding Every Mind</a>
+                <a href="about.html">About Us</a>
+                <a href="Community.html">Join the Community</a>
+                <a href="Contact.html">Contact Us</a>
+            </nav>
+        </section>
+        <section class="cards">
+            <div class="card">
+                <img src="https://www.globalgiving.org/pfil/40879/ph_40879_231226.jpg" alt="Inclusive Classroom">
+                <h3>Inclusive Classroom</h3>
+                <p>Discover strategies for creating an inclusive learning environment.</p>
+            </div>
+            <div class="card">
+                <img src="https://www.jkpi.org/wp-content/uploads/2024/01/uni159600_small.jpg" alt="Smiling Learners">
+                <h3>Smiling Learners</h3>
+                <p>Learn how to engage students with hands-on activities.</p>
+            </div>
+            <div class="card">
+                <img src="tools.avif" height="200" alt="Accessible Tools">
+                <center><h3>Accessible Tools</h3>
+                <p>Explore tools and resources for accessible education.</p></center>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Together We Teach. All rights reserved.</p>
+    </footer>
+    <script src="script.js">
+    </script>
+</body>
+</html>
