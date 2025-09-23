@@ -78,7 +78,7 @@
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                window.location.href = "../home.html";
+                window.location.href = "home.html";
             }).catch((error) => {
                 const errorMessage = error.message;
                 message.textContent = "Google Sign-In Error: " + errorMessage;
